@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55206d80-3e5a-41ae-846a-0e8f2b007765" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YFDFAysdHhypp8f6rx4SU1beSw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="Application.Fit (1)">
+    <configuration name="Fit (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.calculator.Fit" />
+      <module name="chapter_001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.job4j.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Fit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.calculator.Fit" />
+      <module name="job4j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.job4j.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Fit (1)" />
+        <item itemvalue="Application.Fit" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55206d80-3e5a-41ae-846a-0e8f2b007765" name="Default Changelist" comment="" />
+      <created>1582529343474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582529343474</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="44" y="93" key="#Notifications" timestamp="1582541742119">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="44" y="93" key="#Notifications/0.0.1920.1028@0.0.1920.1028" timestamp="1582541742119" />
+    <state width="1037" height="199" key="GridCell.Tab.0.bottom" timestamp="1582563639057">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state width="1037" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1028@0.0.1920.1028" timestamp="1582563639057" />
+    <state width="1037" height="199" key="GridCell.Tab.0.center" timestamp="1582563639056">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state width="1037" height="199" key="GridCell.Tab.0.center/0.0.1920.1028@0.0.1920.1028" timestamp="1582563639056" />
+    <state width="1037" height="199" key="GridCell.Tab.0.left" timestamp="1582563639056">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state width="1037" height="199" key="GridCell.Tab.0.left/0.0.1920.1028@0.0.1920.1028" timestamp="1582563639056" />
+    <state width="1037" height="199" key="GridCell.Tab.0.right" timestamp="1582563639057">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state width="1037" height="199" key="GridCell.Tab.0.right/0.0.1920.1028@0.0.1920.1028" timestamp="1582563639057" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1582563879064">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1920.1028@0.0.1920.1028" timestamp="1582563879064" />
+    <state x="185" y="301" key="com.intellij.ide.util.TipDialog" timestamp="1582553190835">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="185" y="301" key="com.intellij.ide.util.TipDialog/0.0.1920.1028@0.0.1920.1028" timestamp="1582553190835" />
+    <state x="0" y="144" key="new project wizard" timestamp="1582543147629">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="0" y="144" key="new project wizard/0.0.1920.1028@0.0.1920.1028" timestamp="1582543147629" />
+  </component>
+</project>
