@@ -14,9 +14,7 @@ public class SqArea {
     public static double square(int perimeter, int coefficient) {
 
         double height = (float)perimeter / ( 2 * (coefficient + 1) );
-//        System.out.println("height=" + height);
         double length = height * coefficient;
-//        System.out.println("length=" + length);
         double rsl = length * height;
         return rsl;
     }
