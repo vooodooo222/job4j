@@ -2,15 +2,15 @@ package ru.job4j.loop;
 
 public class CheckPrimeNumber {
     public static boolean check(int number) {
-        boolean isPrimeNumber = number >= 2;
-        for (int i = 2; i <= number; i++) {
-            if ((number % i) == 0) {
-                if (number != i) {
-                    isPrimeNumber = false;
+        boolean isCanPrimeNumber = number >= 2;
+        if (isCanPrimeNumber) {
+            for (int i = 2; i != number; i++) {
+                if ((number % i) == 0) {
+                    isCanPrimeNumber = false;
                     break;
                 }
             }
         }
-        return isPrimeNumber;
+        return isCanPrimeNumber;
     }
 }
