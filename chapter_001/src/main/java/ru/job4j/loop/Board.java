@@ -2,29 +2,28 @@ package ru.job4j.loop;
 
 public class Board {
     public static void paint(int width, int height) {
-        int cell = 0;
-        int tmp_width = width;
         for (int row = 0; row < height; row++) {
-            for (; cell < tmp_width; cell++) {
-                if (cell % 2 == 0 ) {
-                    System.out.print("X");
-                } else {
-                    System.out.print(" ");
+            if (row % 2 == 0) {
+                // четная строка
+                for (int cell = 0; cell < width; cell++) {
+                    if (cell % 2 == 0 ) {
+                        System.out.print("X");
+                    } else {
+                        System.out.print("O");
+                    }
+                }
+            } else {
+                // не четная строка
+                for (int cell = 0; cell < width; cell++) {
+                    if (cell % 2 == 0 ) {
+                        System.out.print("O");
+                    } else {
+                        System.out.print("X");
+                    }
                 }
             }
             // добавляем перевод на новую строку.
             System.out.println();
-
-            // вернем счетчику ячейки значения по умолчанию
-            cell = 0;
-            tmp_width = width;
-
-            // если строка четная
-            if (row % 2 == 0) {
-                // сместим счетчик ячейки на 1
-                cell = cell + 1;
-                tmp_width = tmp_width + 1;
-            }
         }
     }
 
