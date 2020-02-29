@@ -1,5 +1,10 @@
 package ru.job4j.calculator;
 
+/**
+ * Calculator
+ * Contains and performs arithmetic operations
+ * @author Vladimir Aleksandrov (lazer_shtamp@mail.ru)
+ */
 public class Calculator {
 
     public static void plus(int first, int second) {
