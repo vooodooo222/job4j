@@ -3,23 +3,11 @@ package ru.job4j.loop;
 public class Board {
     public static void paint(int width, int height) {
         for (int row = 0; row < height; row++) {
-            if (row % 2 == 0) {
-                // четная строка
-                for (int cell = 0; cell < width; cell++) {
-                    if (cell % 2 == 0 ) {
-                        System.out.print("X");
-                    } else {
-                        System.out.print("O");
-                    }
-                }
-            } else {
-                // не четная строка
-                for (int cell = 0; cell < width; cell++) {
-                    if (cell % 2 == 0 ) {
-                        System.out.print("O");
-                    } else {
-                        System.out.print("X");
-                    }
+            for (int cell = 0; cell < width; cell++) {
+                if (cell % 2 == 0) {
+                    System.out.print(row % 2 == 0? "X" : "O");
+                } else {
+                    System.out.print(row % 2 == 0? "O" : "X");
                 }
             }
             // добавляем перевод на новую строку.
