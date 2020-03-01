@@ -4,10 +4,10 @@ public class Board {
     public static void paint(int width, int height) {
         for (int row = 0; row < height; row++) {
             for (int cell = 0; cell < width; cell++) {
-                if (cell % 2 == 0) {
-                    System.out.print(row % 2 == 0? "X" : "O");
+                if((row + cell) % 2 == 0 ) {
+                    System.out.print("X");
                 } else {
-                    System.out.print(row % 2 == 0? "O" : "X");
+                    System.out.print("O");
                 }
             }
             // добавляем перевод на новую строку.
