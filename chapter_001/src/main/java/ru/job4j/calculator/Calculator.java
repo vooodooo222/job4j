@@ -7,11 +7,20 @@ package ru.job4j.calculator;
  */
 public class Calculator {
 
+    /**
+     * plus.
+     * @param first - first value of expression
+     * @param second - second value of expression
+     */
     public static void plus(int first, int second) {
         int result = first + second;
         System.out.println(result);
     }
 
+    /**
+     * main.
+     * @param args - input parameter of program
+     */
     public static void main(String[] args) {
         int one = 1;
         int two = 2;
