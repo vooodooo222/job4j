@@ -38,6 +38,18 @@ public class FindLoopTest {
     }
 
     @Test
+    public void whenFind44() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {5, 2, 10, 2, 44};
+        int value = 44;
+        int startIndex = 0;
+        int finishIndex = 4;
+        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
+        int indexExpect = 4;
+        assertThat(indexFound, is(indexExpect));
+    }
+
+    @Test
     public void whenStartIndexOutOfBoundsThenNegative() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {5, 2, 10, 2, 4};

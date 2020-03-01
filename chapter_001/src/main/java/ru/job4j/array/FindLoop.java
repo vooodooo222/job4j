@@ -15,7 +15,7 @@ public class FindLoop {
     public int indexOf(int[] data, int el, int startIndex, int finishIndex) {
         int indexFound = -1; // если элемента нет в массиве, то возвращаем -1.
         if (isValid(startIndex, data) && isValid(finishIndex, data)) {
-            for (int index = startIndex; index < finishIndex; index++) {
+            for (int index = startIndex; index <= finishIndex; index++) {
                 if (data[index] == el) {
                     indexFound = index;
                     break;
