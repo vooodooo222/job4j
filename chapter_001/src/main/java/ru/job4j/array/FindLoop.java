@@ -14,11 +14,15 @@ public class FindLoop {
 
     public int indexOf(int[] data, int el, int startIndex, int finishIndex) {
         int indexFound = -1; // если элемента нет в массиве, то возвращаем -1.
-        for (int index = startIndex; index <= finishIndex; index++) {
-            if (data[index] == el) {
-                indexFound = index;
-                break;
+        try {
+            for (int index = startIndex; index <= finishIndex; index++) {
+                if (data[index] == el) {
+                    indexFound = index;
+                    break;
+                }
             }
+        } catch (Exception e) {
+            // logFile.error(e.getMessage());
         }
         return indexFound;
     }
