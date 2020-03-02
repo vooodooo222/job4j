@@ -1,6 +1,8 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -51,37 +53,43 @@ public class FindLoopTest {
 
     @Test
     public void whenStartIndexOutOfBoundsThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 2, 10, 2, 4};
-        int value = 2;
-        int startIndex = -1;
-        int finishIndex = 4;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
+        try {
+            FindLoop find = new FindLoop();
+            int[] input = new int[] {5, 2, 10, 2, 4};
+            int value = 2;
+            int startIndex = -1;
+            int finishIndex = 4;
+            find.indexOf(input, value, startIndex, finishIndex);
+        } catch (Exception e) {
+            assertEquals( "Index -1 out of bounds for length 5",  e.getMessage());
+        }
     }
 
     @Test
     public void whenFinishIndexOutOfBoundsThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 2, 10, 2, 4};
-        int value = 2;
-        int startIndex = 2;
-        int finishIndex = 6;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
+        try {
+            FindLoop find = new FindLoop();
+            int[] input = new int[] {5, 2, 10, 2, 4};
+            int value = 2;
+            int startIndex = 2;
+            int finishIndex = 6;
+            find.indexOf(input, value, startIndex, finishIndex);
+        } catch (Exception e) {
+            assertEquals( "Index -1 out of bounds for length 5",  e.getMessage());
+        }
     }
 
     @Test
     public void whenArrayIsEmptyThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {};
-        int value = 2;
-        int startIndex = 0;
-        int finishIndex = 1;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
+        try {
+            FindLoop find = new FindLoop();
+            int[] input = new int[] {};
+            int value = 2;
+            int startIndex = 0;
+            int finishIndex = 1;
+            find.indexOf(input, value, startIndex, finishIndex);
+        } catch (Exception e) {
+            assertEquals( "Index 0 out of bounds for length 0",  e.getMessage());
+        }
     }
 }
