@@ -49,40 +49,4 @@ public class FindLoopTest {
         int indexExpect = 4;
         assertThat(indexFound, is(indexExpect));
     }
-
-    @Test
-    public void whenStartIndexOutOfBoundsThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 2, 10, 2, 4};
-        int value = 2;
-        int startIndex = -1;
-        int finishIndex = 4;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
-    }
-
-    @Test
-    public void whenFinishIndexOutOfBoundsThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 2, 10, 2, 4};
-        int value = 5;
-        int startIndex = 2;
-        int finishIndex = 6;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
-    }
-
-    @Test
-    public void whenArrayIsEmptyThenNegative() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {};
-        int value = 2;
-        int startIndex = 0;
-        int finishIndex = 1;
-        int indexFound = find.indexOf(input, value, startIndex, finishIndex);
-        int indexExpect = -1;
-        assertThat(indexFound, is(indexExpect));
-    }
 }
