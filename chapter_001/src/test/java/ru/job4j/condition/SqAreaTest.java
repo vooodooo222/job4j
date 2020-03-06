@@ -6,9 +6,9 @@ import org.junit.Test;
 public class SqAreaTest {
     @Test
     public void square() {
-        int in_perimeter = 14;
-        int in_coefficient = 2;
-        double out = SqArea.square(in_perimeter, in_coefficient);
+        int inPerimeter = 14;
+        int inCoefficient = 2;
+        double out = SqArea.square(inPerimeter, inCoefficient);
         Assert.assertEquals(10.88, out, 0.01);
     }
 }
