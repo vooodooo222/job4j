@@ -13,7 +13,7 @@ package ru.job4j.condition;
 public class SqArea {
     public static double square(int perimeter, int coefficient) {
 
-        double height = (float) perimeter / (2 * (coefficient + 1));
+        double height = (float)perimeter / ( 2 * (coefficient + 1) );
         double length = height * coefficient;
         double rsl = length * height;
         return rsl;

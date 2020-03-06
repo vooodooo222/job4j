@@ -7,14 +7,15 @@ public class AlertDivByZero {
         possibleDiv(-2);
     }
 
-    @SuppressWarnings("checkstyle:RightCurly")
     public static void possibleDiv(int number) {
         String msg;
         if (number == 0) {
             msg = "Could not div by ";
-        } else if (number < 0) {
+        }
+        else if (number < 0) {
             msg = "This is negative number ";
-        } else {
+        }
+        else {
             msg = "This is div by ";
         }
         System.out.println(msg + number);

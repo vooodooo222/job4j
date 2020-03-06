@@ -4,10 +4,10 @@ public class Point {
     public static double distance(int x1, int y1, int x2, int y2) {
 //        System.out.println("x1:" + x1 + " x2:" + x2 + " y1:" + y1 + " y2:" + y2);
 
-        double rsl1 = Math.pow((x2 - x1), 2);
+        double rsl1 = Math.pow( (x2 - x1), 2 );
 //        System.out.println("(x2 - x1)^2 = " + rsl1);
 
-        double rsl2 = Math.pow((y2 - y1), 2);
+        double rsl2 = Math.pow( (y2 - y1), 2 );
 //        System.out.println("(y2 - y1)^2 = " + rsl2);
 
         double sumRes = rsl1 + rsl2;
