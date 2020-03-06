@@ -4,7 +4,7 @@ public class MatrixCheck {
     public static boolean monoHorizontal(char[][] board, int row) {
         boolean result = true;
         for (int cell = 0; cell < board[row].length; cell++) {
-            if ( board[row][cell] != 'X' ) {
+            if (board[row][cell] != 'X') {
                 result = false;
                 break;
             }
@@ -25,7 +25,7 @@ public class MatrixCheck {
 
     public static char[] extractDiagonal(char[][] board) {
         char[] rsl = new char[board.length];
-        for ( int i = 0; i < board.length; i++ ) {
+        for (int i = 0; i < board.length; i++) {
             rsl[i] = board[i][i];
         }
         return rsl;
@@ -33,10 +33,8 @@ public class MatrixCheck {
 
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        for ( int i = 0; i < board.length; i++ ) {
-            if ( board[i][i] == 'X' &&
-                    ( monoHorizontal(board, i) ||
-                            monoVertical(board, i) ) ) {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 'X' && (monoHorizontal(board, i) ||  monoVertical(board, i))) {
                 result = true;
                 break;
             }

@@ -24,7 +24,7 @@ public class FitnessTest {
     }
 
     @Test
-    public void whenIvanLessByOneNik_2() {
+    public void whenIvanLessByOneNik2() {
         int month = Fitness.calc(90, 90);   // чтобы обогнать
         assertThat(month, is(1));
     }
