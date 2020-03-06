@@ -8,9 +8,8 @@ public class Defragment {
                 while (nextIndex < array.length) {
                     if (array[nextIndex] != null) {
                         // меняем местами null с не null
-                        String nullCell = array[index];
                         array[index] = array[nextIndex];
-                        array[nextIndex] = nullCell;
+                        array[nextIndex] = null;
                         break;
                     }
                     nextIndex++;
