@@ -4,7 +4,8 @@ public class Defragment {
     public static String[] compress(String[] array) {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
-                for (int nextIndex = index + 1; nextIndex < array.length; nextIndex++) {
+                int nextIndex = index + 1;
+                while (nextIndex < array.length) {
                     if (array[nextIndex] != null) {
                         // меняем местами null с не null
                         String nullCell = array[index];
@@ -12,6 +13,7 @@ public class Defragment {
                         array[nextIndex] = nullCell;
                         break;
                     }
+                    nextIndex++;
                 }
             }
             System.out.print(array[index] + " ");
