@@ -5,54 +5,26 @@ import java.util.Arrays;
 public class Merge {
     public int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-        if (left.length == 0) {
-            rsl = right.clone();
-        } else if (right.length == 0) {
-            rsl = left.clone();
-        } else {
-            SortedQueue leftSortedQueue = new SortedQueue(left);
-            SortedQueue rightSortedQueue = new SortedQueue(right);
-            SortedQueue master = leftSortedQueue;
-            SortedQueue slave = rightSortedQueue;
-            SortedQueue result = new SortedQueue(rsl);
-            int parityCounter = 0;
-            for (int rslIndex = 0; rslIndex < rsl.length; rslIndex++) {
-                parityCounter += this.fillValueFromSlaveUntilMasterCellLargest(master, slave, result);
-                if (parityCounter % 2 != 0) {
-                    master = rightSortedQueue;
-                    slave = leftSortedQueue;
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int rslIndex = 0;
+        while (rslIndex < rsl.length) {
+            if (leftIndex < left.length && rightIndex < right.length) {
+                if (left[leftIndex] < right[rightIndex]) {
+                    rsl[rslIndex++] = left[leftIndex++];
+                } else if (left[leftIndex] > right[rightIndex]) {
+                    rsl[rslIndex++] = right[rightIndex++];
                 } else {
-                    master = leftSortedQueue;
-                    slave = rightSortedQueue;
+                    rsl[rslIndex++] = left[leftIndex++];
+                    rsl[rslIndex++] = right[rightIndex++];
                 }
+            } else if (leftIndex < left.length) {
+                rsl[rslIndex++] = left[leftIndex++];
+            } else if (rightIndex < right.length) {
+                rsl[rslIndex++] = right[rightIndex++];
             }
-            result.setArray(rsl);
         }
         return rsl;
-    }
-
-    protected int fillValueFromSlaveUntilMasterCellLargest(SortedQueue master, SortedQueue slave, SortedQueue result) {
-        boolean isCurrentArrayCellLargest = true;
-        while (isCurrentArrayCellLargest) {
-            if (!master.empty() && !slave.empty()) {
-                if (master.viewValue() == slave.viewValue()) {
-                    result.write(slave.pushOutValue());
-                    result.write(master.pushOutValue());
-                } else if (master.viewValue() < slave.viewValue()) {
-                    result.write(master.pushOutValue());
-                    isCurrentArrayCellLargest = false;
-                } else {
-                    result.write(slave.pushOutValue());
-                }
-            } else if (!master.empty()) {
-                result.write(master.pushOutValue());
-            } else if (!slave.empty()) {
-                result.write(slave.pushOutValue());
-            } else {
-                break;  // все данные слиты
-            }
-        }
-        return 1;
     }
 
     public static void main(String[] args) {

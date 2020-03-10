@@ -73,17 +73,4 @@ public class MergeTest {
         );
         assertThat(result, is(expect));
     }
-
-    @Test
-    public void testFillValueFromSlaveUntilMasterCellLargest() {
-        SortedQueue master = new SortedQueue(new int[]{7});
-        SortedQueue slave = new SortedQueue(new int[]{2, 4, 6, 8});
-        SortedQueue rsl = new SortedQueue(new int[master.length + slave.length]);
-        Merge mergeAlgorithm = new Merge();
-        mergeAlgorithm.fillValueFromSlaveUntilMasterCellLargest(master, slave, rsl);
-        int[] expect = {2, 4, 6, 7, 0};
-        int[] result = new int[5];
-        rsl.setArray(result);
-        assertThat(result, is(expect));
-    }
 }
