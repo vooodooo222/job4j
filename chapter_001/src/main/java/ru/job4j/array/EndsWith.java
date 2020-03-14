@@ -1,8 +1,17 @@
 package ru.job4j.array;
 
+/**
+ * EndsWith
+ * @author Aleksandrov Vladimir (lazer_shtamp@mail.ru)
+ */
 public class EndsWith {
+    /**
+     * Проверка, что массив word имеет последние элементы одинаковые с массивом post
+     * @param word - проверяемое слово
+     * @param post - постфикс
+     * @return - true в случае упеха, иначе - false
+     */
     public static boolean endsWith(char[] word, char[] post) {
-        // проверить. что массив word имеет последние элементы одинаковые с post
         boolean result = false;
         if (post.length > 0 && post.length <= word.length) {
             result = true;

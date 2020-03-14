@@ -29,7 +29,6 @@ public class ArrayCharTest {
         assertThat(result, is(false));
     }
 
-
     @Test
     public void whenStartWithPrefixEqualWordThenTrue() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
