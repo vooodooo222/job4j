@@ -23,6 +23,8 @@ public class SqArea {
         int perimeter = 14;
         int coefficient = 2;
         double square = SqArea.square(perimeter, coefficient);
-        System.out.println("perimeter = " + perimeter + "\ncoefficient = " + coefficient + "\nsquare = " + square);
+        System.out.println("perimeter = " + perimeter + System.lineSeparator()
+                         + "coefficient = " + coefficient + System.lineSeparator()
+                         + "square = " + square);
     }
 }
