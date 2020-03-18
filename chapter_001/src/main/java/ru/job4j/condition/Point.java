@@ -6,18 +6,32 @@ package ru.job4j.condition;
  */
 public class Point {
     /**
-     * Считает дистанцию между двумя точками
-     * @param x1 - координата X точки 1
-     * @param y1 - координата Y точки 1
-     * @param x2 - координата X точки 2
-     * @param y2 - координата Y точки 2
-     * @return значение дистанции между двумя точками
+     * Координата X
      */
-    public static double distance(int x1, int y1, int x2, int y2) {
-        double rsl1 = Math.pow((x2 - x1), 2);
-        double rsl2 = Math.pow((y2 - y1), 2);
-        double sumRes = rsl1 + rsl2;
-        return Math.sqrt(sumRes);
+    private int x;
+
+    /**
+     * Координата Y
+     */
+    private int y;
+
+    /**
+     * Конструктор класса Point
+     * @param x - координата X
+     * @param y - координата Y
+     */
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    /**
+     * Считает дистанцию между текущей точкой и указанной точкой во входном параметре
+     * @param that - точка 2
+     * @return значение дистанции между текущей точкой и указанной точкой во входном параметре
+     */
+    public double distance(Point that) {
+        return Math.sqrt(Math.pow((that.x - this.x), 2) + Math.pow((that.y - this.y), 2));
     }
 
     /**
@@ -25,11 +39,9 @@ public class Point {
      * @param args - args
      */
     public static void main(String[] args) {
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
-        double result = Point.distance(x1, y1, x2, y2);
-        System.out.println("result (0, 0) to (2, 0) " + result);
+        Point a = new Point(3, 2);
+        Point b = new Point(5, 5);
+        double result = a.distance(b);
+        System.out.println("result (3, 2) to (5, 5) " + result);
     }
 }
