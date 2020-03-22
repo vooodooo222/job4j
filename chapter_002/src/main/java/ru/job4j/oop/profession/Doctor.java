@@ -1,20 +1,20 @@
 package ru.job4j.oop.profession;
 
 public class Doctor extends Profession {
-    /**
-     * Имеющиеся докторские степени (регалии)
-     */
-    public String[] doctorsDegrees;
 
     /**
-     * Список пациентов (todo: отдельный класс PatientList)
-     * Индекс - ID, Строка - ФИО
+     * Текущее общее количество пациентов
+     */
+    private int patientsCount;
+
+    /**
+     * Список пациентов
+     * //todo: создать отдельный класс списка пациентов со всеми их данными: об их диагнозах, датах приема и т.д.
      */
     private String[] patientList;
 
     /**
-     * Идентификатор текущего пациента
-     * Индекс patientList
+     * Идентификатор текущего пациента на приеме
      */
     private int patientId;
 
@@ -22,27 +22,6 @@ public class Doctor extends Profession {
      * Рейтинг доктора по 5-ти бальной шкале среди пациентов
      */
     private int rating;
-
-    /**
-     * Общее количество принятых пациентов (уникальных) за все время работы для подсчета рейтинга доктора
-     */
-    private int acceptedUniquePatientCount;
-
-    public Doctor() {
-        super();
-        this.rating = 0;
-        this.acceptedUniquePatientCount = 0;
-    }
-
-    /**
-     * Запись на прием к доктору
-     * Ведет подсчет количества пациентов по уникальному ID каждого пациента в случае успеха записи на прием
-     * @param patient - пациент
-     * @return Возвращает true в случае успеной записи на прием, иначе false
-     */
-    public boolean makeAnAppointment(Patient patient) {
-        return true;
-    }
 
     /**
      * Проверка возможен ли прием пациента
@@ -54,7 +33,16 @@ public class Doctor extends Profession {
     }
 
     /**
-     * Услуга - Осмотр
+     * Оформление пациента
+     * @param patient - пациент
+     * @return Возвращает true в случае успешной регистрации, иначе false
+     */
+    public boolean registrationOfPatient(Patient patient) {
+        return true;
+    }
+
+    /**
+     * Осмотр пациента
      * @param patient - пациент
      * @return Возвращает диагноз пациента
      */
@@ -63,12 +51,23 @@ public class Doctor extends Profession {
     }
 
     /**
-     * Услуга - Лечение
+     * Сохраняет в базу данных диагноз для текущего пациента
+     * @param diagnose - диагноз пациента
      * @param patient - пациент
-     * @return Возвращает true в случае успешного выполнения услуги, иначе false
+     * @return Возвращает true в случае успешной
      */
-    public boolean heal(Patient patient) {
+    public boolean saveDiagnoseToDataBase(Diagnose diagnose, Patient patient) {
         return true;
+    }
+
+    /**
+     * Получает диагноз из базы данных для текущего пациента
+     * @param diagnose - диагноз пациента
+     * @param patient - пациент
+     * @return Возвращает диагноз пациента
+     */
+    public Diagnose getDiagnoseFromDataBase(Diagnose diagnose, Patient patient) {
+        return new Diagnose();
     }
 
     /**
@@ -86,11 +85,15 @@ public class Doctor extends Profession {
     public void setRating(int rating) {
     }
 
-    /**
-     * Статиситка - Получает общее количество принятых пациентов (уникальных) за все время работы для подсчета рейтинга доктора
-     * @return Возвращает общее количество принятых пациентов (уникальных) за все время работы для подсчета рейтинга доктора
-     */
-    public int getAcceptedUniquePatientCount() {
-        return this.acceptedUniquePatientCount;
+    public int getPatientsCount() {
+        return patientsCount;
+    }
+
+    public String[] getPatientList() {
+        return patientList;
+    }
+
+    public int getPatientId() {
+        return patientId;
     }
 }
