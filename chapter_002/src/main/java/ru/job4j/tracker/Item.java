@@ -1,5 +1,8 @@
 package ru.job4j.tracker;
 
+/**
+ * Модель данных
+ */
 public class Item {
 
     public Item(String name) {
