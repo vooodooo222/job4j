@@ -100,11 +100,34 @@ public class Tracker {
         return rsl;
     }
 
+    /**
+     * Замена заявки по id
+     * @param id - id заявки, которую хотим заменить
+     * @param item - новая заявка, которую хотим вставить вместо старой
+     * @return Возвращает true в случае успеха, иначе false.
+     */
     public boolean replace(String id, Item item) {
         int index = this.indexOf(id);
         boolean result = false;
         if (index != -1) {
             this.items[index].setName(item.getName());
+            result = true;
+        }
+        return result;
+    }
+
+    /**
+     * Удаление заявки по id
+     * @param id - id заявки, которую хотим заменить
+     * @return Возвращает true в случае успеха, иначе false.
+     */
+    public boolean delete(String id) {
+        int index = this.indexOf(id);
+        boolean result = false;
+        if (index != -1) {
+            System.arraycopy(this.items, index + 1, this.items, index, this.position - index + 1);
+            this.items[this.position - 1] = null;
+            this.position--;
             result = true;
         }
         return result;
