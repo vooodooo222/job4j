@@ -80,13 +80,33 @@ public class Tracker {
      * @return Возвращает найденный Item по id. Если Item не найден - возвращает null.
      */
     public Item findById(String id) {
-        Item item = null;
+        int index = this.indexOf(id);
+        return index != -1 ? this.items[index] : null;
+    }
+
+    /**
+     * Получение индекса заявки по id
+     * @param id - id элемента в списке заявок
+     * @return Возвращает индекс найденного Item по id. Если Item не найден - возвращает -1.
+     */
+    private int indexOf(String id) {
+        int rsl = -1;
         for (int index = 0; index < position; index++) {
-            if (this.items[index].getId().equals(id)) {
-                item = this.items[index];
+            if (items[index].getId().equals(id)) {
+                rsl = index;
                 break;
             }
         }
-        return item;
+        return rsl;
+    }
+
+    public boolean replace(String id, Item item) {
+        int index = this.indexOf(id);
+        boolean result = false;
+        if (index != -1) {
+            this.items[index].setName(item.getName());
+            result = true;
+        }
+        return result;
     }
 }
