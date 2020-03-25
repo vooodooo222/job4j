@@ -92,8 +92,8 @@ public class Tracker {
     }
 
     /**
-     * Замена заявки по id
-     * @param id - id заявки, которую хотим заменить
+     * Замена заявки по id (id остается старой)
+     * @param id - id старой заявки, которую хотим заменить
      * @param item - новая заявка, которую хотим вставить вместо старой
      * @return Возвращает true в случае успеха, иначе false.
      */
@@ -101,7 +101,8 @@ public class Tracker {
         int index = this.indexOf(id);
         boolean result = false;
         if (index != -1) {
-            this.items[index].setName(item.getName());
+            item.setId(id);
+            this.items[index] = item;
             result = true;
         }
         return result;
