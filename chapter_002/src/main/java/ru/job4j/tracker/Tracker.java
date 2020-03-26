@@ -117,7 +117,7 @@ public class Tracker {
         int index = this.indexOf(id);
         boolean result = false;
         if (index != -1) {
-            System.arraycopy(this.items, index + 1, this.items, index, this.position - index + 1);
+            System.arraycopy(this.items, index + 1, this.items, index, this.position - (index + 1));
             this.items[this.position - 1] = null;
             this.position--;
             result = true;
