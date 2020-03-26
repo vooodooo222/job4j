@@ -12,7 +12,7 @@ public class GameElevenTest {
         GameEleven gameEleven = new GameEleven();
         Player player = gameEleven.getPlayers()[0];
         gameEleven.delete(player);
-        assertThat(gameEleven.getPlayers()[1].getNumber(), is(1));
+        assertThat(gameEleven.getPlayers()[0].getNumber(), is(2));
     }
 
     @Test
