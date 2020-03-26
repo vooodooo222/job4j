@@ -7,5 +7,8 @@ public class Matches {
         GameEleven gameEleven = new GameEleven();
         gameEleven.printGameInfo();
         gameEleven.run();
+        GameEleven gameEleven2 = new GameEleven(7, 3);
+        gameEleven2.printGameInfo();
+        gameEleven2.run();
     }
 }
