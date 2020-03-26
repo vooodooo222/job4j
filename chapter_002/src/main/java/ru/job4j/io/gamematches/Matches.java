@@ -1,6 +1,6 @@
-package ru.job4j.io.gameeleven;
+package ru.job4j.io.gamematches;
 
-public class GameEleven {
+public class Matches {
 
     private int matchesCount;
 
@@ -14,13 +14,13 @@ public class GameEleven {
 
     int positionRoguePlayersCount;
 
-    public GameEleven() {
+    public Matches() {
         this.setMatchesCount(11);
         this.setPlayersCount(2);
         this.init();
     }
 
-    public GameEleven(int matchesCount, int playersCount) {
+    public Matches(int matchesCount, int playersCount) {
         this.setMatchesCount(matchesCount);
         this.setPlayersCount(playersCount);
         this.init();
@@ -48,7 +48,7 @@ public class GameEleven {
                 System.out.println("Ход игрока " + player.getNumber());
                 if (!player.move()) {
                     System.out.println("Игрок " + player.getNumber()
-                    + " пытался сжульничать. Данный игрок удаляется из игры и считается одним из проигравших.");
+                            + " пытался сжульничать. Данный игрок удаляется из игры и считается одним из проигравших.");
                     this.saveRougePlayersNeedToDelete(player);
                     continue;
                 }
@@ -173,4 +173,12 @@ public class GameEleven {
         this.positionRoguePlayersCount = positionRoguePlayersCount;
     }
 
+    public static void main(String[] args) {
+        Matches matches = new Matches();
+        matches.printGameInfo();
+        matches.run();
+        Matches matches2 = new Matches(7, 3);
+        matches2.printGameInfo();
+        matches2.run();
+    }
 }

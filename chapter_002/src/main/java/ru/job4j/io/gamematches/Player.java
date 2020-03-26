@@ -1,4 +1,4 @@
-package ru.job4j.io.gameeleven;
+package ru.job4j.io.gamematches;
 
 import java.util.Scanner;
 

@@ -1,18 +1,18 @@
-package ru.job4j.io.gameeleven;
+package ru.job4j.io.gamematches;
 
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
-public class GameElevenTest {
+public class MatchesTest {
 
     @Test
     public void delete() {
-        GameEleven gameEleven = new GameEleven();
-        Player player = gameEleven.getPlayers()[0];
-        gameEleven.delete(player);
-        assertThat(gameEleven.getPlayers()[0].getNumber(), is(2));
+        Matches matches = new Matches();
+        Player player = matches.getPlayers()[0];
+        matches.delete(player);
+        assertThat(matches.getPlayers()[0].getNumber(), is(2));
     }
 
     @Test
