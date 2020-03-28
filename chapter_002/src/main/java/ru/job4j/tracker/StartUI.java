@@ -2,6 +2,10 @@ package ru.job4j.tracker;
 
 import java.util.Scanner;
 
+/**
+ * Меню трекера
+ * author Vladimir Aleksandrov
+ */
 public class StartUI {
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = true;
