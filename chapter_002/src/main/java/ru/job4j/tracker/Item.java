@@ -11,6 +11,11 @@ public class Item {
         this.name = name;
     }
 
+    public void print() {
+        System.out.println("item - name: " + this.getName() + System.lineSeparator()
+                         + "         id: " + this.getId());
+    }
+
     public String getId() {
         return id;
     }
