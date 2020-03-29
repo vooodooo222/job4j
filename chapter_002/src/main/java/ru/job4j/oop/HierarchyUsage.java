@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
+import java.lang.Object;
+
 public class HierarchyUsage {
     public static void main(String[] args) {
         // создаем объекта класса Car.
