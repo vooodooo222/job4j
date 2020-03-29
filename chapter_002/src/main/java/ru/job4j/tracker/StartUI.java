@@ -40,7 +40,8 @@ public class StartUI {
         print(item);
     }
 
-    private static void deleteItem(Input input, Tracker tracker) {
+    public static void deleteItem(Input input, Tracker tracker) {
+        System.out.println(" === Delete item ====");
         String id = input.askStr("Enter item id: ");
         if (tracker.delete(id)) {
             System.out.print("Operation success." + System.lineSeparator());
@@ -49,7 +50,8 @@ public class StartUI {
         }
     }
 
-    private static void replaceItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
+        System.out.println(" === Update item ====");
         String id = input.askStr("Enter item id: ");
         String name = input.askStr("Enter new item name: ");
         Item newItem = new Item(name);
