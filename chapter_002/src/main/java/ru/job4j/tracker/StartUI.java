@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Меню трекера
+ * Trackers menu
  * author Vladimir Aleksandrov
  */
 public class StartUI {
@@ -11,45 +11,67 @@ public class StartUI {
             this.showMenu();
             int select = Integer.parseInt(input.askStr(""));
             if (select == 0) {
-                System.out.println("=== Create a new Item ====");
-                System.out.print("Enter item name: ");
-                String name = input.askStr("=== Create a new Item ====" + System.lineSeparator()
-                                                  + "Enter item name: ");
-                Item item = new Item(name);
-                tracker.add(item);
+                StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                Item[] items = tracker.findAll();
-                for (Item item : items) {
-                    item.print();
-                }
+                StartUI.findAllItems(tracker);
             } else if (select == 2) {
-                String id = input.askStr("Enter item id: ");
-                String name = input.askStr("Enter new item name: ");
-                Item newItem = new Item(name);
-                if (tracker.replace(id, newItem)) {
-                    System.out.print("Operation success." + System.lineSeparator());
-                } else {
-                    System.out.print("Operation error." + System.lineSeparator());
-                }
+                StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
-                String id = input.askStr("Enter item id: ");
-                if (tracker.delete(id)) {
-                    System.out.print("Operation success." + System.lineSeparator());
-                } else {
-                    System.out.print("Operation error." + System.lineSeparator());
-                }
+                StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
-                String id = input.askStr("Enter item id: ");
-                Item item = tracker.findById(id);
-                print(item);
+                StartUI.findItemById(input, tracker);
             } else if (select == 5) {
-                String name = input.askStr("Enter item name: ");
-                Item[] items = tracker.findByName(name);
-                print(items);
+                StartUI.findItemByName(input, tracker);
             } else if (select == 6) {
                 run = false;
             }
         }
+    }
+
+    private static void findItemByName(Input input, Tracker tracker) {
+        String name = input.askStr("Enter item name: ");
+        Item[] items = tracker.findByName(name);
+        print(items);
+    }
+
+    private static void findItemById(Input input, Tracker tracker) {
+        String id = input.askStr("Enter item id: ");
+        Item item = tracker.findById(id);
+        print(item);
+    }
+
+    private static void deleteItem(Input input, Tracker tracker) {
+        String id = input.askStr("Enter item id: ");
+        if (tracker.delete(id)) {
+            System.out.print("Operation success." + System.lineSeparator());
+        } else {
+            System.out.print("Operation error." + System.lineSeparator());
+        }
+    }
+
+    private static void replaceItem(Input input, Tracker tracker) {
+        String id = input.askStr("Enter item id: ");
+        String name = input.askStr("Enter new item name: ");
+        Item newItem = new Item(name);
+        if (tracker.replace(id, newItem)) {
+            System.out.print("Operation success." + System.lineSeparator());
+        } else {
+            System.out.print("Operation error." + System.lineSeparator());
+        }
+    }
+
+    private static void findAllItems(Tracker tracker) {
+        Item[] items = tracker.findAll();
+        for (Item item : items) {
+            item.print();
+        }
+    }
+
+    public static void createItem(Input input, Tracker tracker) {
+        System.out.println("=== Create a new Item ====");
+        String name = input.askStr("Enter item name: ");
+        Item item = new Item(name);
+        tracker.add(item);
     }
 
     private void showMenu() {
@@ -64,7 +86,7 @@ public class StartUI {
                          + "Select:");
     }
 
-    private void print(Item item) {
+    private static void print(Item item) {
         if (item != null) {
             item.print();
         } else {
@@ -72,7 +94,7 @@ public class StartUI {
         }
     }
 
-    private void print(Item[] items) {
+    private static void print(Item[] items) {
         if (items == null) {
             System.out.println("So items not exist");
         } else {
