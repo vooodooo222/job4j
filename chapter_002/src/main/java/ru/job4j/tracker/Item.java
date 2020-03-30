@@ -11,11 +11,6 @@ public class Item {
         this.name = name;
     }
 
-    public void print() {
-        System.out.println("item - name: " + this.getName() + System.lineSeparator()
-                         + "         id: " + this.getId());
-    }
-
     public String getId() {
         return id;
     }
@@ -30,5 +25,9 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString() {
+        return "name: " + this.getName() + "; id: " + this.getId();
     }
 }

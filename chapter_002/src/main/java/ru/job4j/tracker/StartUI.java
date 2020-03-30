@@ -31,13 +31,13 @@ public class StartUI {
     private static void findItemByName(Input input, Tracker tracker) {
         String name = input.askStr("Enter item name: ");
         Item[] items = tracker.findByName(name);
-        print(items);
+        StartUI.print(items);
     }
 
     private static void findItemById(Input input, Tracker tracker) {
         String id = input.askStr("Enter item id: ");
         Item item = tracker.findById(id);
-        print(item);
+        StartUI.print(item);
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
@@ -65,7 +65,7 @@ public class StartUI {
     private static void findAllItems(Tracker tracker) {
         Item[] items = tracker.findAll();
         for (Item item : items) {
-            item.print();
+            System.out.println(item.toString());
         }
     }
 
@@ -90,26 +90,18 @@ public class StartUI {
 
     private static void print(Item item) {
         if (item != null) {
-            item.print();
+            System.out.println(item.toString());
         } else {
             System.out.println("So item not exist");
         }
     }
 
     private static void print(Item[] items) {
-        if (items == null) {
-            System.out.println("So items not exist");
+        if (items.length == 0) {
+            System.out.println("So item not exist");
         } else {
-            if (items.length == 0) {
-                System.out.println("So item not exist");
-            } else {
-                for (Item item : items) {
-                    if (item == null) {
-                        System.out.println("So item not exist");
-                    } else {
-                        item.print();
-                    }
-                }
+            for (Item item : items) {
+                System.out.println(item.toString());
             }
         }
     }
