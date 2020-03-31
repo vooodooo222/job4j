@@ -29,6 +29,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "name: " + this.getName() + "; id: " + this.getId();
+        return String.format("%s %s", getId(), getName());
     }
 }

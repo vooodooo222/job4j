@@ -8,8 +8,7 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        Item[] items = tracker.findAll();
-        for (Item item : items) {
+        for (Item item : tracker.findAll()) {
             System.out.println(item);
         }
         return true;
