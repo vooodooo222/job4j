@@ -6,8 +6,8 @@ import ru.job4j.patterns.simuduck.ducks.behaviors.quack.Squeak;
 public class RubberDuck extends Duck {
 
     public RubberDuck() {
-        quackBehavior = new Squeak();
-        flyBehavior = new FlyNoWay();
+        super.quackBehavior = new Squeak();
+        super.flyBehavior = new FlyNoWay();
     }
 
     @Override

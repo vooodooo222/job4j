@@ -6,8 +6,8 @@ import ru.job4j.patterns.simuduck.ducks.behaviors.quack.Quack;
 public class RedheadDuck extends Duck {
 
     public RedheadDuck() {
-        quackBehavior = new Quack();
-        flyBehavior = new FlyWithWings();
+        super.quackBehavior = new Quack();
+        super.flyBehavior = new FlyWithWings();
     }
 
     @Override
