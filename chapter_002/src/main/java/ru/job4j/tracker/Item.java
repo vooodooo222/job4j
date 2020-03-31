@@ -27,6 +27,7 @@ public class Item {
         this.name = name;
     }
 
+    @Override
     public String toString() {
         return "name: " + this.getName() + "; id: " + this.getId();
     }

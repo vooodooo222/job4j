@@ -65,7 +65,7 @@ public class StartUI {
     private static void findAllItems(Tracker tracker) {
         Item[] items = tracker.findAll();
         for (Item item : items) {
-            System.out.println(item.toString());
+            System.out.println(item);
         }
     }
 
@@ -90,7 +90,7 @@ public class StartUI {
 
     private static void print(Item item) {
         if (item != null) {
-            System.out.println(item.toString());
+            System.out.println(item);
         } else {
             System.out.println("So item not exist");
         }
@@ -101,7 +101,7 @@ public class StartUI {
             System.out.println("So item not exist");
         } else {
             for (Item item : items) {
-                System.out.println(item.toString());
+                System.out.println(item);
             }
         }
     }
