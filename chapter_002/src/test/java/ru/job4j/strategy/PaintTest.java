@@ -1,5 +1,7 @@
 package ru.job4j.strategy;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -10,16 +12,34 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class PaintTest {
+    /**
+     * Поле содержит дефолтный вывод в консоль.
+     */
+    PrintStream stdout = System.out;
+
+    /**
+     * Буфер для результата.
+     */
+    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+    /**
+     * Загрузить вывод в буфер для результата.
+     */
+    @Before
+    public void loadOutput() {
+        System.setOut(new PrintStream(this.out));
+    }
+
+    /**
+     * Загрузить дефолтный вывод в консоль.
+     */
+    @After
+    public void backOutput() {
+        System.setOut(this.stdout);
+    }
+
     @Test
     public void whenDrawTriangle() {
-        // получаем ссылку на стандартный вывод в консоль.
-        PrintStream stdout = System.out;
-        // Создаем буфер для хранения вывода.
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //Заменяем стандартный вывод на вывод в память для тестирования
-        // (в new PrintStream(out) используется up casting: ByteArrayOutputStream to OutputStream).
-        System.setOut(new PrintStream(out));
-        // выполняем действия пишущее в консоль.
         new Paint().draw(new Square());
         assertThat(
                 new String(out.toByteArray()),
@@ -33,20 +53,10 @@ public class PaintTest {
                             .toString()
                 )
         );
-        // возвращаем обратно стандартный вывод в консоль.
-        System.setOut(stdout);
     }
 
     @Test
     public void whenDrawSquare() {
-        // получаем ссылку на стандартный вывод в консоль.
-        PrintStream stdout = System.out;
-        // Создаем буфер для хранения вывода.
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //Заменяем стандартный вывод на вывод в память для тестирования
-        // (в new PrintStream(out) используется up casting: ByteArrayOutputStream to OutputStream).
-        System.setOut(new PrintStream(out));
-        // выполняем действия пишущее в консоль (в буфер для хранения вывода).
         new Paint().draw(new Triangle());
         assertThat(
                 // создаем новую строку с данными из буфера для хранения вывода
