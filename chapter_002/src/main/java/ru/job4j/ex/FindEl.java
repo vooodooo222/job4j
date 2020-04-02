@@ -36,8 +36,6 @@ public class FindEl {
             // При ElementAbuseException - ситуация остаеться под контролем
             // При RuntimeException - приложение будет продолжат успешно работать (это не правильно!)
             //e.printStackTrace();
-        } catch (ElementAbuseException ea) {
-            ea.printStackTrace();
         } catch (ElementNotFoundException en) {
             en.printStackTrace();
         }
