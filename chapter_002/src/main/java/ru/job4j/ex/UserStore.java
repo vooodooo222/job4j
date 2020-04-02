@@ -3,7 +3,7 @@ package ru.job4j.ex;
 public class UserStore {
 
     /**
-     * Если пользователя не нашли в списке, то кинуть исключение UserNotFoundException.
+     * Поиск пользователя
      * @param users - список пользователей
      * @param login - логин пользователя
      * @return Возвращает ссылку на пользователя в случае успеха, иначе кидает UserNotFoundException
