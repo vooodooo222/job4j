@@ -14,13 +14,41 @@ public class FindEl {
         }
         return rsl;
     }
+    public static boolean sent(String value, String[] abuses) throws ElementAbuseException {
+        for (String abuse : abuses) {
+            if (abuse.equals(value)) {
+                throw new ElementAbuseException("element is abuse");
+            }
+        }
+        // sent(value);
+        return true;
+    }
+
+    public static void process(String[] values, String key, String[] abuses) {
+        try {
+            if (indexOf(values, key) != -1) {
+                //throw new RuntimeException("RuntimeException!!!");
+                sent(key, abuses);
+            }
+        //} catch (Exception e) {
+            // Если мы оставим блок catch c Exception, то мы будем захватывать RuntimeException тоже, а это не желательно.
+            // В таком случае:
+            // При ElementAbuseException - ситуация остаеться под контролем
+            // При RuntimeException - приложение будет продолжат успешно работать (это не правильно!)
+            //e.printStackTrace();
+        } catch (ElementAbuseException ea) {
+            ea.printStackTrace();
+        } catch (ElementNotFoundException en) {
+            en.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
-        try {
-            String[] array = {"1", "2", "3"};
-            FindEl.indexOf(array, "4");
-        } catch (ElementNotFoundException ex) {
-            ex.printStackTrace();
-        }
+        String[] array = {"1", "2", "$%!&"};
+        String[] abuses = {"$%", "$%!&", "!&"};
+        String key = "$%!&";
+        FindEl.process(array, key, abuses); // ElementAbuseException
+        key = "3";
+        FindEl.process(array, key, abuses); // ElementNotFoundException
     }
 }
