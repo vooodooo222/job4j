@@ -14,7 +14,7 @@ public class ValidateInputTest {
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
         String[] data = {"one", "1"};
-        ValidateInput input = new ValidateStubInput(data);
+        Input input = new ValidateInput(new StubInput(data));
         input.askInt("Enter");
         assertThat(
                 mem.toString(),
@@ -29,7 +29,7 @@ public class ValidateInputTest {
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
         String[] data = {"7", "6"};
-        ValidateInput input = new ValidateStubInput(data);
+        Input input = new ValidateInput(new StubInput(data));
         input.askInt("Enter", 7);
         assertThat(
                 mem.toString(),
