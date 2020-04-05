@@ -24,5 +24,13 @@ public class InterfaceImpl implements Interface0, Interface1, Interface2 {
         // результат:
         // 1
         // 2
+        Parent3 parent3 = new Parent3();
+        parent3.m1();
+        parent3.m2();
+        parent3.m3();
+        // результат:
+        // m1
+        // m2
+        // m3
     }
 }

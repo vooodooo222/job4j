@@ -1,13 +1,8 @@
 package ru.job4j.oop.inheritance.intefaceextends;
 
-public class Parent2 implements Interface0, Interface1  {
+public class Parent2 implements IParent2 {
     @Override
-    public void method0() {
-
-    }
-
-    @Override
-    public void method1() {
-
+    public void m2() {
+        System.out.println("m2");
     }
 }
