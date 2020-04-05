@@ -61,10 +61,17 @@ public class UserStore {
             // if (validate(user)) {
             //     System.out.println("This user has an access");
             // }
-        } catch (UserInvalidException ue) {
-            ue.printStackTrace();
-        } catch (UserNotFoundException un) {
-            un.printStackTrace();
+//        } catch (UserInvalidException ue) {
+              // входит в UserNotFoundException
+//            ue.printStackTrace();
+//        } catch (UserNotFoundException un) {
+              // входит в Exception
+//            un.printStackTrace();
+//        } catch (RuntimeException en) {
+//            // а так можно вычленить все RuntimeException отдельно от всех Exception
+//            // но делать так не стоит в рабочем коде, только в тестах и при ручном тестировании
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

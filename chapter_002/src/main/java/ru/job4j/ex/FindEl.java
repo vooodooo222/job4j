@@ -30,14 +30,17 @@ public class FindEl {
                 //throw new RuntimeException("RuntimeException!!!");
                 sent(key, abuses);
             }
-        //} catch (Exception e) {
-            // Если мы оставим блок catch c Exception, то мы будем захватывать RuntimeException тоже, а это не желательно.
+            // Если мы оставим блок catch только c Exception, то мы будем захватывать RuntimeException тоже, а это не желательно.
             // В таком случае:
             // При ElementAbuseException - ситуация остаеться под контролем
             // При RuntimeException - приложение будет продолжат успешно работать (это не правильно!)
-            //e.printStackTrace();
-        } catch (ElementNotFoundException en) {
-            en.printStackTrace();
+            // RuntimeException должны использоваться в основном в ручном и автоматическом тестировании,
+            // но не в обработке во время выполнения рабочего кода (не во время runtime)
+//        } catch (RuntimeException en) {
+//            // а так можно вычленить все RuntimeException отдельно от всех Exception
+//            // но делать так не стоит в рабочем коде, только в тестах и при ручном тестировании
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
