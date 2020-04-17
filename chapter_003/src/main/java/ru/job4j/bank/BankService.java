@@ -40,7 +40,7 @@ public class BankService {
         return foundAccount;
     }
 
-    public List<Account> getAccountList(String passport) {
+    private List<Account> getAccountList(String passport) {
         List<Account> accountList = new ArrayList<>();
         User user = findByPassport(passport);
         if (user != null) {
