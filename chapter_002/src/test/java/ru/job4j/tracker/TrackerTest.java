@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import org.hamcrest.Matchers;
+import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import java.util.List;
@@ -89,5 +91,37 @@ public class TrackerTest {
         assertThat(tracker.findById(id), is(nullValue()));
         assertThat(tracker.findByName("Bug3").get(0), is(bug3));
         assertThat(tracker.getItemsCount(), is(2));
+    }
+
+    @Test
+    public void whenSortedAscending() {
+        Tracker tracker = new Tracker();
+        Item c = new Item("C");
+        Item a = new Item("A");
+        Item b = new Item("B");
+        tracker.add(c);
+        tracker.add(a);
+        tracker.add(b);
+        tracker.sortAscending();
+        List<Item> list = tracker.findAll();
+        assertThat(list.get(0).getName(), is(a.getName()));
+        assertThat(list.get(1).getName(), is(b.getName()));
+        assertThat(list.get(2).getName(), is(c.getName()));
+    }
+
+    @Test
+    public void whenSortedDescending() {
+        Tracker tracker = new Tracker();
+        Item a = new Item("A");
+        Item c = new Item("C");
+        Item b = new Item("B");
+        tracker.add(a);
+        tracker.add(c);
+        tracker.add(b);
+        tracker.sortDescending();
+        List<Item> list = tracker.findAll();
+        assertThat(list.get(0).getName(), is(c.getName()));
+        assertThat(list.get(1).getName(), is(b.getName()));
+        assertThat(list.get(2).getName(), is(a.getName()));
     }
 }

@@ -1,9 +1,11 @@
 package ru.job4j.tracker;
 
+import java.util.Comparator;
+
 /**
  * Описывает бизнес модель заявки
  */
-public class Item {
+public class Item implements Comparable<Item> {
     private String id;
     private String name;
 
@@ -30,5 +32,10 @@ public class Item {
     @Override
     public String toString() {
         return String.format("%s %s", getId(), getName());
+    }
+
+    @Override
+    public int compareTo(Item item) {
+        return this.getName().compareTo(item.getName());
     }
 }

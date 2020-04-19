@@ -32,6 +32,8 @@ public class StartUI {
                 new DeleteAction(),
                 new FindByIdAction(),
                 new FindByNameAction(),
+                new SortAscendingAction(),
+                new SortDescendingAction(),
                 new ExitAction()
         };
         new StartUI().init(validateInput, tracker, actions);

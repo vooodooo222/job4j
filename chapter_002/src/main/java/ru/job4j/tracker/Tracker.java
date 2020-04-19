@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -123,5 +124,13 @@ public class Tracker {
             result = true;
         }
         return result;
+    }
+
+    public void sortAscending() {
+        Collections.sort(items, new SortByNameItem());
+    }
+
+    public void sortDescending() {
+        Collections.sort(items, new SortByNameItemRevers());
     }
 }
