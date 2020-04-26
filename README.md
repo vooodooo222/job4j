@@ -1,10 +1,5 @@
+[![Build Status](https://travis-ci.org/vooodooo222/job4j.svg?branch=master)](https://travis-ci.org/vooodooo222/job4j)
+[![codecov](https://codecov.io/gh/vooodooo222/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/vooodooo222/job4j)
+
 # job4j
-
 #я начал курс job4j в 2020 году. Планирую закончить в 2021 году.
-
-Объединение зафиксированных изменений 
-Задание: Объединение зафиксированных изменений
-
-В курсе производилась работа с ветками git
-
-Это новая ветка по задаче 1.Ветки #241465
