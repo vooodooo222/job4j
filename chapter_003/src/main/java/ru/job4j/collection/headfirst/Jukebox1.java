@@ -10,7 +10,7 @@ public class Jukebox1 {
     /**
      * Названия песен
      */
-    ArrayList<String> songList = new ArrayList<>();
+    ArrayList<Song> songList = new ArrayList<>();
 
     public static void main(String[] args) {
         new Jukebox1().go();
@@ -54,6 +54,6 @@ public class Jukebox1 {
      */
     void addSong(String lineToParse) {
         String[] tokens = lineToParse.split("/");
-        songList.add(tokens[0]);
+        songList.add(new Song(tokens[0], tokens[1], tokens[2], tokens[3]));
     }
 }
