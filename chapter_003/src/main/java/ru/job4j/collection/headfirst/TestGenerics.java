@@ -17,11 +17,12 @@ public class TestGenerics {
         dogs.add(new Dog());
         dogs.add(new Dog());
         dogs.add(new Dog());
-        takeAnimals(dogs);       // compiling error!!!
+        takeAnimals(dogs);          // everything works well
     }
 
-    public void takeAnimals(ArrayList<Animal> animals) {
-        animals.add(new Cat()); // there is a problem in that List Dogs can`t store objects Cat
+    public void takeAnimals(ArrayList<? extends Animal> animals) {
+        //solution: wildcards <?>
+        animals.add(new Cat());     // compiling error!!! wildcards <?> does not allow add to list "animals" in this method
         for (Animal a : animals) {
             a.eat();
         }
