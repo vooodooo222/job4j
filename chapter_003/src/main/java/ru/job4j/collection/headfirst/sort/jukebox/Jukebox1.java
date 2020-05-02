@@ -3,9 +3,7 @@ package ru.job4j.collection.headfirst.sort.jukebox;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class Jukebox1 {
     /**
@@ -24,8 +22,11 @@ public class Jukebox1 {
     public void go() {
         getSongs();
         System.out.println(songList);
-        Collections.sort(songList, new ArtistComparator());
+        Collections.sort(songList);
         System.out.println(songList);
+        HashSet<Song> songSet = new HashSet<>();    // duplicates have disappeared but sorting is broken
+        songSet.addAll(songList);
+        System.out.println(songSet);
     }
 
     /**
