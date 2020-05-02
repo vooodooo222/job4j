@@ -1,18 +1,27 @@
 package ru.job4j.collection.headfirst;
 
+import java.util.ArrayList;
+
 public class TestGenerics {
     public static void main(String[] args) {
         new TestGenerics().go();
     }
 
     public void go() {
-        Animal[] animals = {new Dog(), new Cat(), new Dog()};
-        Dog[] dogs = {new Dog(), new Dog(), new Dog()};
-        takeAnimals(animals);
-        takeAnimals(dogs);
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(new Dog());
+        animals.add(new Cat());
+        animals.add(new Dog());
+        takeAnimals(animals);       // everything works well
+        ArrayList<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        takeAnimals(dogs);       // compiling error!!!
     }
 
-    public void takeAnimals(Animal[] animals) {
+    public void takeAnimals(ArrayList<Animal> animals) {
+        animals.add(new Cat()); // there is a problem in that List Dogs can`t store objects Cat
         for (Animal a : animals) {
             a.eat();
         }
