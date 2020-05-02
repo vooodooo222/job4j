@@ -1,4 +1,4 @@
-package ru.job4j.collection.headfirst.sort.mountains;
+package ru.job4j.collection.headfirst.collections.mountains;
 
 import java.util.Collections;
 import java.util.LinkedList;

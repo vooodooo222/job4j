@@ -1,4 +1,4 @@
-package ru.job4j.collection.headfirst.sort.jukebox;
+package ru.job4j.collection.headfirst.collections.jukebox;
 
 public class Song implements Comparable<Song> {
     String title;
