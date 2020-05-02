@@ -21,8 +21,6 @@ public class TestGenerics {
     }
 
     public void takeAnimals(ArrayList<? extends Animal> animals) {
-        //solution: wildcards <?>
-        animals.add(new Cat());     // compiling error!!! wildcards <?> does not allow add to list "animals" in this method
         for (Animal a : animals) {
             a.eat();
         }
