@@ -1,4 +1,4 @@
-package ru.job4j.collection.headfirst.collections.jukebox;
+package ru.job4j.collection.headfirst.jukebox;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -37,7 +37,7 @@ public class Jukebox1 {
         try {
             String workingDirectory = System.getProperty("user.dir");
             System.out.println("Working Directory = " + workingDirectory);
-            String songListFilePath = workingDirectory + "\\chapter_003\\src\\main\\java\\ru\\job4j\\collection\\headfirst\\collections\\jukebox\\SongList.txt";
+            String songListFilePath = workingDirectory + "\\chapter_003\\src\\main\\java\\ru\\job4j\\collection\\headfirst\\jukebox\\SongList.txt";
             File file = new File(songListFilePath);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = null;
