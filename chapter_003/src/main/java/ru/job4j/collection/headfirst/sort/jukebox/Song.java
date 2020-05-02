@@ -1,4 +1,4 @@
-package ru.job4j.collection.headfirst;
+package ru.job4j.collection.headfirst.sort.jukebox;
 
 public class Song implements Comparable<Song> {
     String title;
@@ -32,7 +32,8 @@ public class Song implements Comparable<Song> {
     @Override
     public String toString() {
         return "Song{"
-                + "title='" + title + '\''
+                + "title='" + title + '\'' + " : "
+                + "artiste='" + artiste + '\''
                 + '}';
     }
 

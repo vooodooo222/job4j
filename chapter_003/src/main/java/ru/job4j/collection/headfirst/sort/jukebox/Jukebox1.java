@@ -1,10 +1,11 @@
-package ru.job4j.collection.headfirst;
+package ru.job4j.collection.headfirst.sort.jukebox;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Jukebox1 {
     /**
@@ -23,7 +24,7 @@ public class Jukebox1 {
     public void go() {
         getSongs();
         System.out.println(songList);
-        Collections.sort(songList);
+        Collections.sort(songList, new ArtistComparator());
         System.out.println(songList);
     }
 
@@ -35,7 +36,7 @@ public class Jukebox1 {
         try {
             String workingDirectory = System.getProperty("user.dir");
             System.out.println("Working Directory = " + workingDirectory);
-            String songListFilePath = workingDirectory + "\\chapter_003\\src\\main\\java\\ru\\job4j\\collection\\headfirst\\SongList.txt";
+            String songListFilePath = workingDirectory + "\\chapter_003\\src\\main\\java\\ru\\job4j\\collection\\headfirst\\sort\\jukebox\\SongList.txt";
             File file = new File(songListFilePath);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = null;
@@ -55,5 +56,19 @@ public class Jukebox1 {
     void addSong(String lineToParse) {
         String[] tokens = lineToParse.split("/");
         songList.add(new Song(tokens[0], tokens[1], tokens[2], tokens[3]));
+    }
+
+    public class ArtistComparator implements Comparator<Song> {
+        @Override
+        public int compare(Song o1, Song o2) {
+            return o1.getArtiste().compareTo(o2.getArtiste());
+        }
+    }
+
+    public class TitleComparator implements Comparator<Song> {
+        @Override
+        public int compare(Song o1, Song o2) {
+            return o1.getTitle().compareTo(o2.getTitle());
+        }
     }
 }
