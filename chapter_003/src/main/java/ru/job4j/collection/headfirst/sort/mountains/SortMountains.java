@@ -8,12 +8,14 @@ public class SortMountains {
     LinkedList<Mountain> mountains = new LinkedList<>();
 
     class NameCompare implements Comparator<Mountain> {
+        @Override
         public int compare(Mountain one, Mountain two) {
             return one.getName().compareTo(two.getName());
         }
     }
 
     class HeightCompare implements Comparator<Mountain> {
+        @Override
         public int compare(Mountain one, Mountain two) {
             return Integer.compare(two.getHeight(), one.getHeight());
         }
