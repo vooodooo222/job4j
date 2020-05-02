@@ -20,7 +20,7 @@ public class TestGenerics {
         takeAnimals(dogs);          // everything works well
     }
 
-    public void takeAnimals(ArrayList<? extends Animal> animals) {
+    public <T extends Animal> void takeAnimals(ArrayList<T> animals) {
         for (Animal a : animals) {
             a.eat();
         }
