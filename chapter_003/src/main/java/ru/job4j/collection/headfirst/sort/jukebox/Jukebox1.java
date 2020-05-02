@@ -24,7 +24,7 @@ public class Jukebox1 {
         System.out.println(songList);
         Collections.sort(songList);
         System.out.println(songList);
-        HashSet<Song> songSet = new HashSet<>();    // duplicates have disappeared but sorting is broken
+        TreeSet<Song> songSet = new TreeSet<>();    // duplicates have disappeared sorting is restored. But "Song" need implements Comparable (compareTo)
         songSet.addAll(songList);
         System.out.println(songSet);
     }

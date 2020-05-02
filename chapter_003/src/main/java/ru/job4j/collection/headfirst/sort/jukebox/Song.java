@@ -1,7 +1,5 @@
 package ru.job4j.collection.headfirst.sort.jukebox;
 
-import java.util.Objects;
-
 public class Song implements Comparable<Song> {
     String title;
     String artiste;
@@ -42,16 +40,5 @@ public class Song implements Comparable<Song> {
     @Override
     public int compareTo(Song s) {
         return this.getTitle().compareTo(s.getTitle());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        Song song = (Song) o;
-        return getTitle().equals(song.getTitle());
-    }
-
-    @Override
-    public int hashCode() {
-        return getTitle().hashCode();
     }
 }
