@@ -3,7 +3,7 @@ package ru.job4j.collection.departments;
 import java.util.*;
 
 public class Departments {
-    public static List<String> fillGaps(List<String> deps) {
+    public static <T> List<String> fillGaps(List<String> deps, Comparator<? super T> c) {
         HashSet<String> tmp = new HashSet<>();
         for (String dep : deps) {
             String start = "";
@@ -12,16 +12,11 @@ public class Departments {
                 tmp.add(start);
             }
         }
-        return new ArrayList<>(tmp);
+        return sort(new ArrayList<>(tmp), (Comparator) c);
     }
 
-    public static List<String> sortAsc(List<String> orgs) {
-        orgs.sort(Comparator.naturalOrder());
-        return orgs;
-    }
-
-    public static List<String> sortDesc(List<String> orgs) {
-        orgs.sort(new DepDescComp());
+    public static <T> List<String> sort(List<String> orgs, Comparator<? super T> c) {
+        orgs.sort((Comparator) c);
         return orgs;
     }
 }

@@ -1,6 +1,8 @@
 package ru.job4j.collection.departments;
 
 import org.junit.Test;
+
+import java.util.Comparator;
 import java.util.List;
 import java.util.Arrays;
 import static org.hamcrest.Matchers.is;
@@ -11,7 +13,7 @@ public class DepartmentsTest {
     public void whenMissedAndSortNaturalOrder() {
         List<String> input = Arrays.asList("k1/sk1", "k2/sk1/ssk1");
         List<String> expect = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1", "k2/sk1/ssk1");
-        List<String> result = Departments.sortAsc(Departments.fillGaps(input));
+        List<String> result = Departments.fillGaps(input, Comparator.naturalOrder());
         assertThat(result, is(expect));
     }
 
@@ -19,7 +21,7 @@ public class DepartmentsTest {
     public void whenMissedAndSortReversOrder() {
         List<String> input = Arrays.asList("k1/sk1", "k2/sk1/ssk2", "k2/sk1/ssk1");
         List<String> expect = Arrays.asList("k2", "k2/sk1", "k2/sk1/ssk1", "k2/sk1/ssk2", "k1", "k1/sk1");
-        List<String> result = Departments.sortDesc(Departments.fillGaps(input));
+        List<String> result = Departments.fillGaps(input, new DepDescComp());
         assertThat(result, is(expect));
     }
 
@@ -27,7 +29,7 @@ public class DepartmentsTest {
     public void whenNonChange() {
         List<String> input = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1", "k2/sk1/ssk1");
         List<String> expect = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1", "k2/sk1/ssk1");
-        List<String> result = Departments.sortAsc(Departments.fillGaps(input));
+        List<String> result = Departments.fillGaps(input, Comparator.naturalOrder());
         assertThat(result, is(expect));
     }
 }
