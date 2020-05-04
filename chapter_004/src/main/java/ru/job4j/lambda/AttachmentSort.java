@@ -20,6 +20,15 @@ public class AttachmentSort {
         };
         attachments.sort(comparator);
         System.out.println(attachments);
+        attachments.sort(
+                new Comparator<Attachment>() {
+                    @Override
+                    public int compare(Attachment a1, Attachment a2) {
+                        return a1.getName().compareTo(a2.getName());
+                    }
+                }
+        );
+        System.out.println(attachments);
         ArrayList<Integer> list = new ArrayList<Integer>() {
             @Override
             public boolean add(Integer o) {
