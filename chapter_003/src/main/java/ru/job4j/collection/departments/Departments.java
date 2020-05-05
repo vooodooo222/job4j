@@ -49,4 +49,14 @@ public class Departments {
         }
         return list;
     }
+
+    public static List<String> sortAsc(List<String> orgs) {
+        orgs.sort(Comparator.naturalOrder());
+        return orgs;
+    }
+
+    public static List<String> sortDesc(List<String> orgs) {
+        orgs.sort(new DepDescComp());
+        return orgs;
+    }
 }
