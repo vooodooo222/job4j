@@ -17,7 +17,7 @@ public class AttachmentSort {
         };
         attachments.sort(comparator);
         System.out.println(attachments);
-        attachments.sort((left, right) -> left.getName().compareTo(right.getName()));
+        attachments.sort((left, right) -> Integer.compare(right.getName().length(), left.getName().length()));
         System.out.println(attachments);
         ArrayList<Integer> list = new ArrayList<Integer>() {
             @Override
