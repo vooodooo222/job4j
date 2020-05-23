@@ -11,7 +11,9 @@ public class StreamUsage {
                 new Task("Task #2", 100),
                 new Task("Bug #3", 100)
         );
-        List<Task> bugs = tasks.stream().filter(task -> task.name.contains("Bug")).collect(Collectors.toList());
+        List<Task> bugs = tasks.stream().filter(
+                task -> task.name.contains("Bug")  // лямбда -выражение "Predicate"
+        ).collect(Collectors.toList()); // полученные результат сохранить в коллекции типа List.
         bugs.forEach(System.out::println);
         // аналогия с for-each
         List<Task> container = new ArrayList<>();
@@ -20,7 +22,21 @@ public class StreamUsage {
                 container.add(task);
             }
         }
+        // Если провести аналогию, то
+        //   for это stream()
+        //   if  это Predicate
         container.forEach(System.out::println);
+        // если нам нужно получить только имена задач
+        List<String> names = tasks.stream().map(
+                task -> task.name                   // лямбда -выражение "Function"
+        ).collect(Collectors.toList());
+        names.forEach(System.out::println);
+        // аналогия с for-each
+        List<String> taskNames = new ArrayList<>();
+        for (Task task : tasks) {
+            taskNames.add(task.name);
+        }
+        names.forEach(System.out::println);
     }
 
     public static class Task {
