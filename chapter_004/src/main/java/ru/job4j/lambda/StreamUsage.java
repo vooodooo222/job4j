@@ -12,13 +12,13 @@ public class StreamUsage {
                 new Task("Bug #3", 100)
         );
         List<Task> bugs = tasks.stream().filter(
-                task -> task.name.contains("Bug")  // лямбда -выражение "Predicate"
+                task -> task.name.contains("Bug")  // лямбда-выражение "Predicate"
         ).collect(Collectors.toList()); // полученные результат сохранить в коллекции типа List.
         bugs.forEach(System.out::println);
         // аналогия с for-each
         List<Task> container = new ArrayList<>();
-        for (Task task : tasks) {
-            if ("BUG".equals(task.name)) {
+        for (Task task : tasks) {                   // stream
+            if ("BUG".equals(task.name)) {          // лямбда-выражение "Predicate"
                 container.add(task);
             }
         }
@@ -28,15 +28,27 @@ public class StreamUsage {
         container.forEach(System.out::println);
         // если нам нужно получить только имена задач
         List<String> names = tasks.stream().map(
-                task -> task.name                   // лямбда -выражение "Function"
+                task -> task.name                   // лямбда-выражение "Function"
         ).collect(Collectors.toList());
         names.forEach(System.out::println);
         // аналогия с for-each
         List<String> taskNames = new ArrayList<>();
-        for (Task task : tasks) {
-            taskNames.add(task.name);
+        for (Task task : tasks) {                   // stream
+            taskNames.add(task.name);               // лямбда-выражение "Function"
         }
         names.forEach(System.out::println);
+        // посчитаем общую сумму потраченную на все задачи
+        long total = tasks.stream().map(
+                task -> task.spent                  // лямбда-выражение "Function"
+        ).reduce(
+                0L, Long::sum // "(a, b) -> a + b" - лямбда-выражение "BinaryOperator"
+        );
+        System.out.println(total);
+        // аналог:
+        total = 0L;
+        for (Task task : tasks) {       // stream
+            total += task.spent;        // "Function" + "BinaryOperator"
+        }
     }
 
     public static class Task {
