@@ -1,4 +1,4 @@
-package ru.job4j.streamapi;
+package ru.job4j.streamapi.filter;
 
 import java.util.List;
 import java.util.function.Predicate;
