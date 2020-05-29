@@ -1,0 +1,5 @@
+new ArrayList<Integer>().stream().filter(
+        p -> p % 2 == 0
+    ).sorted().distinct().map(
+        f -> f/2
+    ).collect(Collectors.toList());
