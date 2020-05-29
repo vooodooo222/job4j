@@ -17,9 +17,10 @@ public class ProfileTest {
     @Test
     public void getClassAList() {
         final List<Profile> profilesList = new ArrayList<>();
-        profilesList.add(new Profile(new Address("City1", "StreetA", 1, 1)));
         profilesList.add(new Profile(new Address("City2", "StreetB", 2, 2)));
         profilesList.add(new Profile(new Address("City3", "StreetC", 3, 3)));
+        profilesList.add(new Profile(new Address("City1", "StreetA", 1, 1)));
+        profilesList.add(new Profile(new Address("City2", "StreetB", 2, 2)));
         List<Address> actualAddress = collect(profilesList);
         List<Address> expectedAddress = new ArrayList<>();
         expectedAddress.add(new Address("City1", "StreetA", 1, 1));
