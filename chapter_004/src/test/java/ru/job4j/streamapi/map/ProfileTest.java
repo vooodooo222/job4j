@@ -1,9 +1,6 @@
 package ru.job4j.streamapi.map;
 
-import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.streamapi.filter.School;
-import ru.job4j.streamapi.filter.Student;
 
 import java.util.ArrayList;
 import java.util.List;
