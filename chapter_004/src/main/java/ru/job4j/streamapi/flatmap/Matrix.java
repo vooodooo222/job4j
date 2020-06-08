@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Matrix {
     public static List<Integer> flatMap(Integer[][] matrixArray) {
         return Arrays.stream(matrixArray)
-                .flatMap(Stream::of).sorted()
+                .flatMap(Stream::of)
                 .collect(Collectors.toList());
     }
 }

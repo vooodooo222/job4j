@@ -19,7 +19,7 @@ public class MatrixTest {
                         {3, 4, 5}
                 };
         List<Integer> actualCollection = Matrix.flatMap(matrixArray);
-        List<Integer> expectedCollection = Arrays.asList(0, 1, 2, 3, 4, 5, 7, 8, 9);
+        List<Integer> expectedCollection = Arrays.asList(0, 1, 2, 9, 8, 7, 3, 4, 5);
         assertThat(actualCollection, is(expectedCollection));
     }
 }
