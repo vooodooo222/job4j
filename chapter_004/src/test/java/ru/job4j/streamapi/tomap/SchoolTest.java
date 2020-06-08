@@ -31,7 +31,7 @@ public class SchoolTest {
         School school = new School();
         Map<String, Student> actualMapStudents = school.toMap(studentList);
         Map<String, Student> expectedMapStudents = new HashMap<>();
-        expectedMapStudents.put("Sasha1", new Student(30, "Sasha1"));
+        expectedMapStudents.put("Sasha1", new Student(10, "Sasha1"));
         expectedMapStudents.put("Sasha3", new Student(49, "Sasha3"));
         expectedMapStudents.put("Sasha4", new Student(50, "Sasha4"));
         expectedMapStudents.put("Sasha5", new Student(69, "Sasha5"));

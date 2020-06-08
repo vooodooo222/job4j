@@ -9,10 +9,7 @@ public class School {
         return students.stream().collect(Collectors.toMap(
                 Student::getSurname,
                 s -> s,
-                (s1, s2) -> {
-                    s1.setScore(s1.getScore() + s2.getScore());
-                    return s1;
-                }
+                (s1, s2) -> s1
                 )
         );
     }
