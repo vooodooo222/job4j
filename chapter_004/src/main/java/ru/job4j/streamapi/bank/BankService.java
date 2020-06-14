@@ -1,9 +1,6 @@
 package ru.job4j.streamapi.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
@@ -19,29 +16,45 @@ public class BankService {
         }
     }
 
+    /**
+     * Найти пользователя по паспорту
+     *
+     * @param passport - паспорт пользователя
+     * @return пользователь с заданным паспортом
+     */
     public User findByPassport(String passport) {
-        User foundUser = null;
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                foundUser = user;
-                break;
-            }
+        Optional<User> user = users.keySet().stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst();
+        if (user.isEmpty()) {
+            return null;
         }
-        return foundUser;
+        return user.get();
     }
 
+    /**
+     * Найти аккаунт по его реквизитам для пользователя с указанным паспортом
+     *
+     * @param passport  - паспорт пользователя
+     * @param requisite - реквизиты нужного аккаунта пользователя
+     * @return аккаунт пользователя
+     */
     public Account findByRequisite(String passport, String requisite) {
-        Account foundAccount = null;
-        List<Account> accountList = getAccountList(passport);
-        for (Account account : accountList) {
-            if (account.getRequisite().equals(requisite)) {
-                foundAccount = account;
-                break;
-            }
+        Optional<Account> account = getAccountList(passport).stream()
+                .filter(a -> a.getRequisite().equals(requisite))
+                .findFirst();
+        if (account.isEmpty()) {
+            return null;
         }
-        return foundAccount;
+        return account.get();
     }
 
+    /**
+     * Вернуть список аккаунтов пользователя по паспорту
+     *
+     * @param passport - паспорт пользователя
+     * @return список аккаунтов пользователя
+     */
     private List<Account> getAccountList(String passport) {
         List<Account> accountList = new ArrayList<>();
         User user = findByPassport(passport);
