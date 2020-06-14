@@ -1,4 +1,4 @@
-package ru.job4j.streamapi.takewhile;
+package ru.job4j.streamapi.dropwhile;
 
 import org.junit.Test;
 import ru.job4j.streamapi.filter.Student;
