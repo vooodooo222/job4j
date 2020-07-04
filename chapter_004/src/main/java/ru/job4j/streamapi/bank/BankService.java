@@ -10,9 +10,9 @@ public class BankService {
     }
 
     public void addAccount(String passport, Account account) {
-        Optional<List<Account>> accountList = getAccountList(passport);
-        if (accountList.isPresent() && !accountList.get().contains(account)) {
-            accountList.get().add(account);
+        List<Account> accountList = getAccountList(passport);
+        if (!accountList.contains(account)) {
+            accountList.add(account);
         }
     }
 
@@ -36,13 +36,9 @@ public class BankService {
      * @return аккаунт пользователя
      */
     public Optional<Account> findByRequisite(String passport, String requisite) {
-        Optional<Account> account = Optional.empty();
-        if (getAccountList(passport).isPresent()) {
-            account = getAccountList(passport).get().stream()
-                    .filter(a -> a.getRequisite().equals(requisite))
-                    .findFirst();
-        }
-        return account;
+        return getAccountList(passport).stream()
+                .filter(a -> a.getRequisite().equals(requisite))
+                .findFirst();
     }
 
     /**
@@ -51,13 +47,13 @@ public class BankService {
      * @param passport - паспорт пользователя
      * @return список аккаунтов пользователя
      */
-    private Optional<List<Account>> getAccountList(String passport) {
-        Optional<List<Account>> optionalAccountList = Optional.empty();
+    private List<Account> getAccountList(String passport) {
+        List<Account> accountList = new ArrayList<>();
         Optional<User> user = findByPassport(passport);
         if (user.isPresent()) {
-            optionalAccountList = Optional.of(users.get(user.get()));
+            accountList = users.get(user.get());
         }
-        return optionalAccountList;
+        return accountList;
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
